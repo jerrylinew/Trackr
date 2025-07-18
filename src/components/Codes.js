@@ -18,7 +18,7 @@ export default function Codes() {
   return (
     <>
       <button className="bigButton" onClick={handleSubmit}>
-        <img src="trackrLogo.png" className="logo" />
+        <img src="./trackrLogo.png" className="logo" />
       </button>
 
       <div>
