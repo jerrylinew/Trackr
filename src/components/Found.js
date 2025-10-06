@@ -32,7 +32,7 @@ export default function Found(props) {
       <div className="container">
         <div className="content"></div>
         <h1 className="found-title">
-          You have found {props.info.name}'s {props.info.objname}!
+          You have not found {props.info.name}'s {props.info.objname}!
         </h1>
         <p className="message-label">The message from the owner:</p>
         <p className="message">{props.info.message}</p>
