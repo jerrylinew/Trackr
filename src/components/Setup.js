@@ -45,7 +45,7 @@ export default function Setup(props) {
               placeholder="Your object's description"
             />
             <input name="TheirGmail" type="text" placeholder="Email" />
-            <button className="buton">START THAT BOI UP</button>
+            <button className="buton">Setup your Trackr</button>
           </form>
         )}
         {sucess == "sucess" && (
