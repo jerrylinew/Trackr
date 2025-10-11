@@ -33,7 +33,7 @@ export default function Setup(props) {
     <>
       <div className="formtitle">
         <div className="cuh">
-          <h1>Setup Your Trackr</h1>
+          <h1>Setup Your Tracker</h1>
         </div>
         {sucess != "sucess" && (
           <form onSubmit={Submits} className="form">
