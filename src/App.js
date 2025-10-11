@@ -3,6 +3,7 @@ import Codes from "./components/Codes";
 import Scan from "./components/Scan";
 import Location from "./components/Location";
 
+
 export default function App() {
   return (
     <Router>
