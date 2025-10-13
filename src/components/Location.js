@@ -10,20 +10,23 @@ export default function Location() {
   const [data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
-  useEffect(async function () {
-    const docData = await fetchData(code);
-    if (docData && docData.lat && docData.long) {
-      setData({
-        lat: docData.lat,
-        long: docData.long,
-      });
-    } else {
-      setNotFound(true);
+  useEffect(() => {
+    async function loadLocation() {
+      const docData = await fetchData(code);
+      if (docData && docData.lat && docData.long) {
+        setData({
+          lat: docData.lat,
+          long: docData.long,
+        });
+      } else {
+        setNotFound(true);
+      }
     }
-  }, []);
+    loadLocation();
+  }, [code]);
 
   if (notFound) {
-    return <h1>NOTFOUND</h1>;
+    return <h1>LOCATION HAS NOT BEEN SHARED YET</h1>;
   }
   if (!data) {
     return <h1>Loading</h1>;
