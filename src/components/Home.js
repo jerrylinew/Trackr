@@ -7,7 +7,7 @@ export default function Home() {
       <nav className="homepage-nav">
         <div className="homepage-nav-container">
           <div className="homepageLogo">
-            <img src="trackrLogo.png" width="25" />
+            <img src="/trackrLogo.png" width="25" />
             <a href="#" className="homepage-nav-brand">
               Trackr
             </a>
@@ -76,7 +76,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="step-image-placeholder">
-                <img src="setuppage.png" alt="Setup page screenshot" />
+                <img src="/setuppage.png" alt="Setup page screenshot" />
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="step-image-placeholder">
-                <img src="trackrbottle.png" />
+                <img src="/trackrbottle.png" />
               </div>
             </div>
 
@@ -106,7 +106,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="step-image-placeholder">
-                <img src="emailtrackr.png" />
+                <img src="/emailtrackr.png" />
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
             </a>
           </div>
           <div className="shop-image">
-            <img src="trackrphone.png" />
+            <img src="/trackrphone.png" />
           </div>
         </div>
       </section>
