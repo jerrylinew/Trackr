@@ -10,8 +10,8 @@ export default function Scan() {
   const [data, setData] = useState(null);
   const [notFound, setNotFound] = useState(false);
 
-  useEffect(
-    async function () {
+  useEffect(() => {
+    async function loadData() {
       const docData = await fetchData(code);
       if (docData) {
         setData({
@@ -21,19 +21,20 @@ export default function Scan() {
           message: docData.message,
           email: docData.email,
           objname: docData.objname,
+          isBounty: docData.isBounty || false, // Add this line
         });
       } else {
         setNotFound(true);
       }
-    },
-    [code]
-  );
+    }
+    loadData();
+  }, [code]);
 
   if (notFound) return <h1>Invalid or expired code</h1>;
   if (!data) return <p>Loading...</p>;
 
   if (!data.isSetup) {
-    return <Setup theid={code} />;
+    return <Setup theid={code} isBounty={data.isBounty} />;
   } else {
     return <Found info={data} />;
   }
