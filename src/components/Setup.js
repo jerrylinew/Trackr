@@ -66,7 +66,7 @@ export default function Setup(props) {
         <div className="setup-nav-container">
           <a href="/" style={{ textDecoration: "none" }}>
             <div className="setup-logo">
-              <img src="trackrLogo.png" width="25" alt="Trackr Logo" />
+              <img src="/trackrLogo.png" width="25" alt="Trackr Logo" />
               <span className="setup-nav-brand">Trackr</span>
             </div>
           </a>

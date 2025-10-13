@@ -34,7 +34,7 @@ export default function Found(props) {
       <nav className="found-nav">
         <div className="found-nav-container">
           <div className="found-logo">
-            <img src="trackrLogo.png" width="25" alt="Trackr Logo" />
+            <img src="/trackrLogo.png" width="25" alt="Trackr Logo" />
             <span className="found-nav-brand">Trackr</span>
           </div>
         </div>
