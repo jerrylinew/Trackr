@@ -5,9 +5,9 @@ import { QRCodeCanvas } from "qrcode.react";
 export default function Codes() {
   const [codes, setCodes] = useState([]);
 
-  async function handleSubmit() {
+  async function handleSubmit(isBounty) {
     try {
-      const { code } = await addCode();
+      const { code } = await addCode(isBounty);
       const url = `${window.location.origin}/${code}`;
       setCodes((prev) => [...prev, { code, url }]);
     } catch (err) {
@@ -17,8 +17,11 @@ export default function Codes() {
 
   return (
     <>
-      <button className="bigButton" onClick={handleSubmit}>
-        <img src="./trackrLogo.png" className="logo" />
+      <button className="bigButton" onClick={() => handleSubmit(false)}>
+        No Bounty
+      </button>
+      <button className="bigBountyButton" onClick={() => handleSubmit(true)}>
+        Bounty
       </button>
 
       <div>
