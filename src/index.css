@@ -1,212 +1,836 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-.bigButton {
-  width: 100px;
-  height: 100px;
+/* Global Styles */
+* {
+  box-sizing: border-box;
 }
 
-.formtitle {
-  padding: 2%;
-  background-color: #fafafa;
-  border: 3px solid #00000000;
-}
-.formtitle h1 {
-  font-family: "Arimo";
-  color: #070707;
-  font-weight: 250;
-}
-
-.formtitle .cuh {
-  text-align: center;
-  border-radius: 3px;
-  padding-left: 10px;
-  width: 90%;
-}
-
-.formtitle input {
-  flex-wrap: 10px;
-  display: block;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
-  margin-bottom: 10px;
-  width: 90%;
-  height: 20px;
-  color: rgb(17, 17, 17);
-  background: rgb(255, 255, 255);
-  border-radius: 6px;
-  border: 2px solid #00000010;
-}
-
-.formtitle ::placeholder {
-  color: rgba(0, 0, 0, 0.368);
-}
-
-.formtitle .form {
-  text-align: center;
-}
-
-.formtitle .buton {
-  margin: auto;
-  width: 200px;
-  height: 30px;
-  color: rgb(232, 232, 232);
-  background: rgb(25, 25, 255);
-  border: 3px solid #00000000;
-  border-radius: 10px;
-}
-
-.formtitle p {
-  color: #f0f0f0;
-  font-family: "Arimo";
-}
-
-.formtitle .usetup {
-  text-align: center;
-}
-.formtitle p1 {
-  color: rgb(0, 0, 0));
-  font-family: "Arimo";
-  font-size: 20px;
-  font-weight: 300;
-}
-
-.formtitle p2 {
-  color: rgb(255, 48, 48);
-  font-family: "Arimo";
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.logo {
-  width: 100px;
-
-}
-
-.found {
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+/* Setup Page Styles */
+.setup-page {
   min-height: 100vh;
-  padding: 20px;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-.found .container {
+/* Setup Navigation */
+.setup-nav {
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.setup-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 64px;
+}
+
+.setup-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.setup-nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+/* Setup Container */
+.setup-container {
   max-width: 600px;
   margin: 0 auto;
-  overflow: hidden;
+  padding: 80px 20px;
 }
 
-.found .header {
-  padding: 30px;
+.setup-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.setup-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.setup-subtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* Setup Form */
+.setup-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.setup-input {
+  padding: 12px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  background-color: white;
+}
+
+.setup-input:focus {
+  outline: none;
+  border-color: black;
+}
+
+.setup-input::placeholder {
+  color: #999;
+}
+
+.setup-input-full {
+  grid-column: 1 / -1;
+}
+
+.setup-btn-primary {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.setup-btn-primary:hover {
+  background-color: #333;
+}
+
+/* Setup Success */
+.setup-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.setup-success-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #10b981;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #e1e5e9;
+  margin: 0 auto 24px;
 }
 
-.found .logo {
-  height: 45px;
-  width: 45px;
-  margin-right: 15px;
-  border-radius: 8px;
-  object-fit: cover;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 8px;
-  border: 2px solid #e1e5e9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.setup-success-icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
 }
 
-.found .header-title {
-  color: #2c3e50;
-  font-size: 32px;
-  font-weight: 700;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.setup-success-message {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Setup Error */
+.setup-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.setup-error p {
+  color: #dc2626;
+  font-weight: 500;
   margin: 0;
-  letter-spacing: -0.5px;
-}
-
-.found .content {
-  padding: 40px 30px;
-}
-
-.found .found-title {
-  color: #34495e;
-  font-size: 30px !important;
-  margin-top: -15px;
-  margin-bottom: 50px;
-  font-weight: 600;
   text-align: center;
+}
+
+/* Found Page Styles */
+.found-page {
+  min-height: 100vh;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Found Navigation */
+.found-nav {
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.found-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 64px;
+}
+
+.found-logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.found-nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+/* Found Container */
+.found-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.found-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+/* Found Header */
+.found-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.found-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 16px;
   line-height: 1.3;
 }
 
-.found .message-label {
-  color: #5a6c7d;
-  font-size: 22px;
-  font-weight: 550;
-  margin-bottom: 15px;
+.found-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Found Message Section */
+.found-message-section {
+  margin-bottom: 40px;
+}
+
+.found-message-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 16px;
   text-align: center;
+}
+
+.found-message {
+  background-color: #f8f9fa;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.found-message-icon {
+  width: 24px;
+  height: 24px;
+  color: #666;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.found-message-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Found Actions */
+.found-actions {
+  text-align: center;
+}
+
+.found-btn-primary {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
 
-.found .message-label::before {
-  content: "💬";
-  font-size: 14px;
+.found-btn-primary:hover {
+  background-color: #333;
 }
 
-.found .message {
-  color: #2c3e50;
-  font-weight: 500;
-  font-size: 20px;
+.found-btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Found Success */
+.found-success {
+  text-align: center;
+  padding: 20px;
+}
+
+.found-success-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.found-success-icon svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.found-success-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 16px;
+}
+
+.found-success-message {
+  font-size: 18px;
+  color: #666;
   line-height: 1.6;
-  background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
-  padding: 25px;
-  border-radius: 12px;
+}
+
+/* Homepage Styles */
+.homepage {
+  min-height: 100vh;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Homepage Navigation */
+.homepage-nav {
+  background-color: white;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.homepage-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.homepageLogo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.homepage-nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+.homepage-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 32px;
+}
+
+.homepage-nav-link {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.homepage-nav-link:hover,
+.homepage-nav-link.active {
+  color: black;
+}
+
+/* Homepage Hero Section - UPDATED */
+.hero-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Changed from center to flex-start */
+  justify-content: center;
+  padding-top: 8rem; /* Added top padding to push content down from the very top */
+}
+
+.homepage-hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Removed vertical padding since we're controlling it with the parent */
   text-align: center;
-  border: 1px solid #b3d9ff;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
-  transition: all 0.3s ease;
 }
 
-.found .message:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 10px;
-    border-radius: 8px;
-  }
-
-  .header {
-    padding: 20px;
-  }
-
-  .header-title {
-    font-size: 28px;
-  }
-
-  .content {
-    padding: 30px 20px;
-  }
-
-  .found-title {
-    font-size: 22px;
-  }
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 3rem;
 }
 
-.gotlocate {
+.homepage-hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+  background-color: white;
+  padding: 6rem 0; /* Increased padding for more breathing room */
+}
+
+.homepage-services-container {
+  max-width: 1400px; /* Increased max width */
+  margin: 0 auto;
+  padding: 0 3rem; /* Increased horizontal padding */
+  width: 100%;
+}
+
+.homepage-services-header {
   text-align: center;
-  margin: auto;
-  width: 300px;
-  color: rgb(232, 232, 232);
-  background: rgb(25, 25, 255);
-  border: 3px solid #00000000;
-  border-radius: 10px;
-  font-size: 15px;
-  box-shadow: 0 4px 5px #00000020;
+  margin-bottom: 5rem; /* Increased spacing below header */
+}
+
+.how-it-works-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.how-it-works-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.homepage-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem; /* Increased gap between cards */
+  max-width: 1200px; /* Increased max width for wider cards */
+  margin: 0 auto;
+}
+
+.step1,
+.step2,
+.step3 {
+  font-size: 20px;
+  color: black;
+}
+
+.step-card {
+  background-color: white;
+  border-radius: 20px; /* Slightly more rounded for modern look */
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Softer, more subtle shadow */
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 550px; /* Increased height for better proportions */
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-8px); /* Slightly more pronounced hover effect */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Reorder content for alternating layout */
+
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem; /* Increased padding for more spacious feel */
+}
+
+.step-image-placeholder {
+  flex: 1;
+  background-color: #fffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #666;
+  min-height: 280px; /* Increased min-height for better proportions */
+}
+
+/* Step Image Styling - NEW */
+.step-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.step-title {
+  font-size: 1.6rem; /* Slightly larger title */
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1.5rem; /* Increased spacing */
+  line-height: 1.3;
+}
+
+.step-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7; /* Increased line height for better readability */
+  margin: 0;
+  max-width: 280px; /* Constrain text width for better readability */
+  margin: 0 auto; /* Center the text block */
+}
+
+/* Remove the step-icon styles since we're not using icons anymore */
+.step-icon {
+  display: none;
+}
+
+/* Shop Section */
+.shop-section {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 0; /* Added vertical padding for breathing room */
+}
+
+.shop-container {
+  max-width: 1400px; /* Increased max width for more space */
+  margin: 0 auto;
+  padding: 0 3rem; /* Increased horizontal padding */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem; /* Increased gap between columns */
+  align-items: center;
+  width: 100%;
+}
+
+.shop-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px; /* Constrain content width for better readability */
+}
+
+.shop-content h2 {
+  font-size: 3.5rem; /* Slightly larger title */
+  font-weight: bold;
+  color: black;
+  margin-bottom: 2.5rem; /* Increased spacing after title */
+  line-height: 1.1;
+  letter-spacing: -0.02em; /* Tighter letter spacing for modern look */
+}
+
+.shop-content p {
+  font-size: 1.3rem; /* Slightly larger text */
+  color: #666666;
+  line-height: 1.7; /* Increased line height for better readability */
+  margin-bottom: 2rem; /* Increased spacing between paragraphs */
+  max-width: 450px; /* Constrain paragraph width */
+}
+
+.shop-content p:last-of-type {
+  margin-bottom: 3rem; /* Extra space before button */
+}
+
+.shop-content .homepage-btn-primary {
+  align-self: flex-start; /* Align button to the left instead of stretching */
+  width: auto; /* Override any width: 100% */
+  display: inline-block; /* Make it inline-block instead of full width */
+}
+
+.shop-image {
+  /* No need for background color as the image will cover it */
+  border-radius: 20px; /* Slightly more rounded corners */
+  height: 500px; /* Increased height */
+  overflow: hidden; /* This is key to crop the image if needed */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-image:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.shop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image fill the container */
+  display: block; /* Removes default space under the image */
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: black;
+  border-top: 1px solid #333;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contact-section-item h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.contact-section-item h4 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.contact-section-item p {
+  color: white;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.contact-section-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-section-item ul li {
+  margin-bottom: 0.75rem;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.contact-section-item ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section-item ul li a:hover {
+  color: #ccc;
+}
+
+.contact-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.contact-bottom p {
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Button Styles */
+.homepage-btn-primary,
+.homepage-btn-secondary {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: inherit;
+  border: 2px solid black;
+}
+
+.homepage-btn-primary {
+  background-color: black;
+  color: white;
+  border-left: 7px solid black;
+  border-right: 7px solid black;
+}
+
+.homepage-btn-primary:hover {
+  background-color: #333;
+}
+
+.homepage-btn-secondary {
+  background-color: transparent;
+  color: black;
+}
+
+.homepage-btn-secondary:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 4rem; /* Less padding on mobile */
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .how-it-works-title,
+  .shop-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .shop-container {
+    grid-template-columns: 1fr;
+    gap: 3rem; /* Reduced gap for mobile */
+    padding: 0 2rem; /* Less horizontal padding on mobile */
+    text-align: center; /* Center align content on mobile */
+  }
+
+  .shop-content {
+    max-width: none; /* Remove width constraint on mobile */
+    order: 1; /* Content first on mobile */
+    align-items: center; /* This centers all flex items including the button */
+  }
+
+  /* Override the desktop align-self on mobile */
+  .shop-content .homepage-btn-primary {
+    align-self: center; /* Changed from flex-start to center for mobile */
+  }
+
+  .shop-image {
+    height: 300px; /* Smaller height on mobile */
+    order: 2; /* Image second on mobile */
+  }
+
+  .shop-content p {
+    max-width: none; /* Remove width constraint on mobile */
+  }
+
+  .homepage-services-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem; /* Slightly increased gap for mobile too */
+    max-width: 400px; /* Constrain width on mobile for better readability */
+    margin: 0 auto;
+  }
+
+  .step-card {
+    min-height: 450px; /* Adjusted height for mobile */
+  }
+
+  .step-content {
+    padding: 2rem; /* Slightly reduced padding on mobile */
+  }
+
+  .step-description {
+    max-width: none; /* Remove width constraint on mobile */
+  }
+
+  .homepage-hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .homepage-nav-links {
+    display: none;
+  }
 }
