@@ -20,7 +20,7 @@ function generateRandomCode() {
   return code;
 }
 
-export async function addCode() {
+export async function addCode(isBounty) {
   const randomCode = generateRandomCode();
 
   try {
@@ -30,6 +30,8 @@ export async function addCode() {
       name: null,
       message: null,
       createdAt: new Date(),
+      isBounty: isBounty,
+      bounty: 0,
     });
     console.log("Document written with ID: ", docRef.id);
 
@@ -57,32 +59,35 @@ export async function setupCode(
   message,
   ownerName,
   ownerGmail,
-  leID
+  leID,
+  Bounty
 ) {
   try {
-    //const querySnapshot = await getDocs(collection(db, "items"));
-    //const ingrds = [];
-    //var prev = "1";
-    // querySnapshot.forEach((doc) => {
-    //   const data = doc.data();
-    //   console.log(`code: ${data.code} name: ${data.name}`);
-    //   ingrds.push(`${data.code}`);
-    //   prev = data.code;
-    // });
-    //console.log("There are " + ingrds.length + " codes in total");
     const q = query(collection(db, "items"), where("code", "==", leID));
     const snap = await getDocs(q);
     const cityRef = snap.docs[0].ref;
-    const doscData = snap.docs[0].data();
-    //console.log("THIS IS " + doscData.name);
-    setDoc(cityRef, {
+
+    const updateData = {
       code: leID,
       objname: objectName,
       message: message,
       name: ownerName,
       email: ownerGmail,
       isSetup: true,
-    });
+    };
+
+    if (Bounty !== null && Bounty !== undefined && !isNaN(Bounty)) {
+      updateData.bounty = Bounty;
+    } else {
+      // Get the current document to check if it's a bounty item
+      const currentDoc = snap.docs[0].data();
+      if (currentDoc.isBounty) {
+        updateData.bounty = 0; // Set to 0 for bounty items with no amount
+      }
+    }
+
+    await setDoc(cityRef, updateData, { merge: true });
+
     console.log(
       `this code: ${snap.docs[0].data().code}
       \nthis objname: ${snap.docs[0].data().objmname}
@@ -95,7 +100,6 @@ export async function setupCode(
       \nyour mail: ${ownerGmail}`
     );
     console.log(snap.docs[0].data());
-    //console.log(ingrds);
     return true;
   } catch (e) {
     console.error("Error adding document: ", e);
