@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { setLongLat } from "../services/database";
 import { QRCodeCanvas } from "qrcode.react";
 import { sendMessage } from "../services/notify";
-import { useGeolocation } from "@uidotdev/usehooks";
+
 
 export default function Found(props) {
-  const state = useGeolocation();
   let [success, setSuccess] = useState("not yet");
-
+  const[locationState, setLocationState] = useState(null);
+  const[isRequestingLocation, setIsRequestingLocation] = useState(false);
+  
   useEffect(() => {
     async function notifyOwner() {
       await sendMessage(props.info);
@@ -17,13 +18,29 @@ export default function Found(props) {
 
   async function Locate(event) {
     event.preventDefault();
-    // Remove the FormData line - it's not needed
-    if (success == "not yet") {
-      console.log(
-        state.latitude + ", " + state.longitude + ", " + props.info.code
-      );
-      if (await setLongLat(state.latitude, state.longitude, props.info.code)) {
-        setSuccess((old) => "success");
+    
+    if (success === "not yet" && !isRequestingLocation) {
+      setIsRequestingLocation(true);
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            console.log(latitude + ", " + longitude + ", " + props.info.code);
+            
+            if (await setLongLat(latitude, longitude, props.info.code)) {
+              setSuccess("success");
+            }
+            setIsRequestingLocation(false);
+          },
+          (error) => {
+            console.error("Error getting location:", error);
+            alert("Unable to get your location. Please enable location permissions.");
+            setIsRequestingLocation(false);
+          }
+        );
+      } else {
+        alert("Geolocation is not supported by your browser.");
+        setIsRequestingLocation(false);
       }
     }
   }
