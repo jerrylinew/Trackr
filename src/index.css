@@ -352,6 +352,65 @@
   line-height: 1.6;
 }
 
+/* Location Page Styles */
+.location-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.location-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.location-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.location-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.location-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.location-map-wrapper {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.location-map-iframe {
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+
+.location-link {
+  color: black;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.location-link:hover {
+  color: #333;
+}
+
 /* Homepage Styles */
 .homepage {
   min-height: 100vh;
@@ -839,6 +898,19 @@
 
   .found-nav-container {
     padding: 0 1.5rem;
+  }
+
+  /* Location Page - Mobile */
+  .location-container {
+    padding: 40px 1.5rem;
+  }
+
+  .location-content {
+    padding: 32px 24px;
+  }
+
+  .location-map-iframe {
+    height: 350px;
   }
 }
 
