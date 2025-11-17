@@ -32,6 +32,7 @@ export async function addCode(isBounty) {
       createdAt: new Date(),
       isBounty: isBounty,
       bounty: 0,
+      imageData: null,
     });
     console.log("Document written with ID: ", docRef.id);
 
@@ -114,5 +115,19 @@ export async function setLongLat(Lat, Lon, leID) {
   setDoc(codeRef, { long: Lon, lat: Lat }, { merge: true });
   console.log(snap.docs[0].data().long);
   console.log(snap.docs[0].data().lat);
+  return true;
+}
+
+export async function appendimageData(imageD, leID) {
+  const q = query(collection(db, "items"), where("code", "==", leID));
+  const snap = await getDocs(q);
+  const codeRef = snap.docs[0].ref;
+  setDoc(
+    codeRef,
+    { imageData: imageD, imageDate: new Date() },
+    { merge: true }
+  );
+  console.log(snap.docs[0].data().imageD);
+  console.log("yay");
   return true;
 }

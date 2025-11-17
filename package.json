@@ -15,7 +15,8 @@
     "tailwindcss": "4.1.11",
     "shadcn-ui": "0.9.5",
     "@uidotdev/usehooks": "2.4.1",
-    "emailjs-com": "3.2.0"
+    "emailjs-com": "3.2.0",
+    "react-html5-camera-photo": "1.5.11"
   },
   "devDependencies": {
     "@types/react": "19.0.0",

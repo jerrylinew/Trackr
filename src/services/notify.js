@@ -5,6 +5,7 @@ emailjs.init("zsQDde7qgZg7w0LAH");
 
 export async function sendMessage(info) {
   console.log(info);
+  console.log(info.imageData);
   const notifyOwner = async () => {
     try {
       await emailjs.send("service_d78sugq", "template_43aq8ut", {

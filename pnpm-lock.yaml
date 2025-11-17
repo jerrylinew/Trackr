@@ -26,6 +26,9 @@ dependencies:
   react-dom:
     specifier: ^19.0.0
     version: 19.1.0(react@19.1.0)
+  react-html5-camera-photo:
+    specifier: 1.5.11
+    version: 1.5.11(react-dom@19.1.0)(react@19.1.0)
   react-router-dom:
     specifier: 7.6.3
     version: 7.6.3(react-dom@19.1.0)(react@19.1.0)
@@ -7485,6 +7488,10 @@ packages:
     hasBin: true
     dev: false
 
+  /jslib-html5-camera-photo@3.3.4:
+    resolution: {integrity: sha512-qysjLnP4bud0+g0qs5uA/7i569x+6ID2ufgezf9XQ+BE3EvhYjz177vi9WXLEuq+V6C/WXEv73NUICvHm5VGmQ==}
+    dev: false
+
   /json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
     dev: false
@@ -9349,6 +9356,17 @@ packages:
 
   /react-error-overlay@6.1.0:
     resolution: {integrity: sha512-SN/U6Ytxf1QGkw/9ve5Y+NxBbZM6Ht95tuXNMKs8EJyFa/Vy/+Co3stop3KBHARfn/giv+Lj1uUnTfOJ3moFEQ==}
+    dev: false
+
+  /react-html5-camera-photo@1.5.11(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-5OpdW66UmwKwd0ZHvy/U9tEZj19GrcG6RDRXjs1bFBgJoWzLJoJ7YNd8rmdrizV/6go/z9GrwoWMovqCUyaJgQ==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      jslib-html5-camera-photo: 3.3.4
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
     dev: false
 
   /react-is@16.13.1:

@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import { setLongLat } from "../services/database";
+import { setLongLat, appendimageData } from "../services/database";
 import { QRCodeCanvas } from "qrcode.react";
 import { sendMessage } from "../services/notify";
-
+import Camera, { FACING_MODES } from "react-html5-camera-photo";
+import "react-html5-camera-photo/build/css/index.css";
 
 export default function Found(props) {
+  //Send Location to Name
   let [success, setSuccess] = useState("not yet");
-  const[locationState, setLocationState] = useState(null);
-  const[isRequestingLocation, setIsRequestingLocation] = useState(false);
-  
+  //const [locationState, setLocationState] = useState(null);
+  const [isRequestingLocation, setIsRequestingLocation] = useState(false);
+  const [dataUri, setDataUri] = useState(false);
+  const [rror, setRror] = useState(0);
+
   useEffect(() => {
     async function notifyOwner() {
       await sendMessage(props.info);
@@ -18,7 +22,7 @@ export default function Found(props) {
 
   async function Locate(event) {
     event.preventDefault();
-    
+
     if (success === "not yet" && !isRequestingLocation) {
       setIsRequestingLocation(true);
       if ("geolocation" in navigator) {
@@ -26,7 +30,7 @@ export default function Found(props) {
           async (position) => {
             const { latitude, longitude } = position.coords;
             console.log(latitude + ", " + longitude + ", " + props.info.code);
-            
+
             if (await setLongLat(latitude, longitude, props.info.code)) {
               setSuccess("success");
             }
@@ -34,7 +38,9 @@ export default function Found(props) {
           },
           (error) => {
             console.error("Error getting location:", error);
-            alert("Unable to get your location. Please enable location permissions.");
+            alert(
+              "Unable to get your location. Please enable location permissions."
+            );
             setIsRequestingLocation(false);
           }
         );
@@ -43,6 +49,28 @@ export default function Found(props) {
         setIsRequestingLocation(false);
       }
     }
+  }
+
+  //Get Image to Name
+  async function handleTakePhoto(dataUri) {
+    // Do stuff with the photo...
+    if (rror == 0) {
+      await appendimageData(dataUri, props.info.code);
+      setDataUri(dataUri);
+      console.log("takePhoto");
+    }
+  }
+  function handleCameraError(error) {
+    if (rror == 0) {
+      alert(
+        "Camera permissions are off. Please enable camera permissions and reload."
+      );
+    }
+    setRror(1);
+    console.log("handleCameraError", error);
+  }
+  function resetdataUri() {
+    setDataUri(false);
   }
 
   return (
@@ -138,6 +166,45 @@ export default function Found(props) {
                   you for helping reunite this item with its owner!
                 </p>
               </div>
+            )}
+            {rror == 1 ? (
+              <>
+                <p>
+                  Camera permissions are off. Please enable camera permissions
+                  and reload.
+                </p>
+              </>
+            ) : (
+              <></>
+            )}
+            {dataUri ? (
+              <>
+                <h3>
+                  Here is the image! It has been sent to {props.info.name}!
+                </h3>
+                <img className="found-image" src={dataUri} />
+                <button className="found-retake" onClick={resetdataUri}>
+                  Retake photo
+                </button>
+              </>
+            ) : (
+              <>
+                <h3>
+                  Take a picture of {props.info.objname} and it's surroundings!
+                </h3>
+
+                <Camera
+                  className="found-camera"
+                  onTakePhoto={(dataUri) => {
+                    handleTakePhoto(dataUri);
+                  }}
+                  idealResolution={{ width: 640, height: 480 }}
+                  onCameraError={(rror) => {
+                    handleCameraError(rror);
+                  }}
+                  idealFacingMode={FACING_MODES.ENVIRONMENT}
+                />
+              </>
             )}
           </div>
         </div>
