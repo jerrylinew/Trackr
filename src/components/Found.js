@@ -165,46 +165,48 @@ export default function Found(props) {
                   Your location has been shared with {props.info.name}. Thank
                   you for helping reunite this item with its owner!
                 </p>
-              </div>
-            )}
-            {rror == 1 ? (
-              <>
-                <p>
-                  Camera permissions are off. Please enable camera permissions
-                  and reload.
-                </p>
-              </>
-            ) : (
-              <></>
-            )}
-            {dataUri ? (
-              <>
-                <h3>
-                  Here is the image! It has been sent to {props.info.name}!
-                </h3>
-                <img className="found-image" src={dataUri} />
-                <button className="found-retake" onClick={resetdataUri}>
-                  Retake photo
-                </button>
-              </>
-            ) : (
-              <>
-                <h3>
-                  Take a picture of {props.info.objname} and it's surroundings!
-                </h3>
 
-                <Camera
-                  className="found-camera"
-                  onTakePhoto={(dataUri) => {
-                    handleTakePhoto(dataUri);
-                  }}
-                  idealResolution={{ width: 640, height: 480 }}
-                  onCameraError={(rror) => {
-                    handleCameraError(rror);
-                  }}
-                  idealFacingMode={FACING_MODES.ENVIRONMENT}
-                />
-              </>
+                {rror == 1 ? (
+                  <>
+                    <p>
+                      Camera permissions are off. Please enable camera
+                      permissions and reload.
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {dataUri ? (
+                  <>
+                    <h3>
+                      Here is the image! It has been sent to {props.info.name}!
+                    </h3>
+                    <img className="found-image" src={dataUri} />
+                    <button className="found-retake" onClick={resetdataUri}>
+                      Retake photo
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <h3>
+                      Take a picture of {props.info.objname} and it's
+                      surroundings!
+                    </h3>
+
+                    <Camera
+                      className="found-camera"
+                      onTakePhoto={(dataUri) => {
+                        handleTakePhoto(dataUri);
+                      }}
+                      idealResolution={{ width: 640, height: 480 }}
+                      onCameraError={(rror) => {
+                        handleCameraError(rror);
+                      }}
+                      idealFacingMode={FACING_MODES.ENVIRONMENT}
+                    />
+                  </>
+                )}
+              </div>
             )}
           </div>
         </div>
