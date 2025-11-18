@@ -22,6 +22,7 @@ export default function Scan() {
           email: docData.email,
           objname: docData.objname,
           isBounty: docData.isBounty || false, // Add this line
+          imageData: docData.imageData,
         });
       } else {
         setNotFound(true);

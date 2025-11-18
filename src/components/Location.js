@@ -17,6 +17,8 @@ export default function Location() {
         setData({
           lat: docData.lat,
           long: docData.long,
+          imageUri: docData.imageData,
+          imageDait: docData.imageDate,
         });
       } else {
         setNotFound(true);
@@ -118,6 +120,18 @@ export default function Location() {
               loading="lazy"
             />
           </div>
+
+          <h1 className="found-title2">Image taken by finder:</h1>
+          {data.imageUri == null ? (
+            <>
+              <p>No image has been taken!</p>
+            </>
+          ) : (
+            <>
+              <p>This image was taken at {Date(data.imageDait.seconds)}</p>
+              <img className="location-image" src={data.imageUri} />
+            </>
+          )}
         </div>
       </div>
     </div>
