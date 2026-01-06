@@ -19,8 +19,13 @@ export default function Home() {
               </a>
             </li>
             <li>
+              <a href="#storySection" className="homepage-nav-link">
+                Story
+              </a>
+            </li>
+            <li>
               <a href="#instructionsSection" className="homepage-nav-link">
-                Instructions
+                How It Works
               </a>
             </li>
             <li>
@@ -28,7 +33,6 @@ export default function Home() {
                 Shop
               </a>
             </li>
-
             <li>
               <a href="#footerSection" className="homepage-nav-link">
                 Contact
@@ -56,16 +60,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Story Section */}
+      <section className="story-section" id="storySection">
+        <div className="story-container">
+          <div className="story-content">
+            <div className="story-badge">Our Story</div>
+            <h2 className="story-title">Mission, Vision & Values</h2>
+            <div className="story-text">
+              <p>
+                <strong>Mission:</strong> To eliminate the waste and
+                environmental impact of lost everyday items by providing an
+                affordable, accessible tracking solution that helps students and
+                young adults recover their belongings and build better habits to
+                prevent future losses.
+              </p>
+              <p>
+                <strong>Vision:</strong> A world where losing everyday items no
+                longer means unnecessary waste, where every water bottle,
+                jacket, and lunch box can find its way home, preventing millions
+                of tons of CO2 emissions and landfill waste annually.
+              </p>
+              <p>
+                <strong>Values:</strong>
+                <ul>
+                  <li>
+                    <strong>Sustainability First</strong> - Help the planet by
+                    keeping items in use, not landfills.
+                  </li>
+                  <li>
+                    <strong>Affordable for Everyone</strong> - Quality tracking
+                    shouldn't break the bank.
+                  </li>
+                  <li>
+                    <strong>Community Matters</strong> - We're stronger when we
+                    help each other out.
+                  </li>
+                  <li>
+                    <strong>Keep It Simple</strong> - Powerful tech that anyone
+                    can use.
+                  </li>
+                  <li>
+                    <strong>Prevention Over Cure</strong> - Stop losses before
+                    they happen.
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
+          <div className="story-image">
+            <img src="/team-placeholder.jpg" alt="Team or mission imagery" />
+            <p className="image-caption">
+              [Replace with team photo or mission-related image]
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
       <section className="how-it-works-section" id="instructionsSection">
         <div className="homepage-services-container">
           <div className="homepage-services-header">
-            <h2 className="how-it-works-title">How It Works</h2>
-            <p className="how-it-works-subtitle">3 Basic Steps</p>
+            <div className="story-badge">Innovation Model</div>
+            <h2 className="how-it-works-title">How Trackr Works</h2>
+            <p className="how-it-works-subtitle">
+              3 Simple Steps to Never Lose Your Items Again
+            </p>
           </div>
 
           <div className="homepage-services-grid">
-            {/* Step 1 - Image at bottom */}
+            {/* Step 1 */}
             <div className="step-card">
               <div className="step-content">
                 <h4 className="step1">1.</h4>
@@ -80,7 +143,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Step 2 - Image at top (using reverse class) */}
+            {/* Step 2 */}
             <div className="step-card">
               <div className="step-content">
                 <h4 className="step2">2.</h4>
@@ -95,7 +158,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Step 3 - Image at bottom */}
+            {/* Step 3 */}
             <div className="step-card">
               <div className="step-content">
                 <h4 className="step3">3.</h4>
@@ -107,6 +170,43 @@ export default function Home() {
               </div>
               <div className="step-image-placeholder">
                 <img src="/emailtrackr.png" />
+              </div>
+            </div>
+          </div>
+
+          <div className="model-benefits">
+            <h3 className="benefits-title">Key Benefits</h3>
+            <div className="benefits-grid">
+              <div className="benefit-card">
+                <div className="benefit-icon">💡</div>
+                <h4>Affordable Universal Recovery</h4>
+                <p>
+                  Trackr's waterproof QR stickers work on any item and cost 20x
+                  less than tracking devices like AirTags, making lost item
+                  recovery accessible and practical for everyday belongings
+                  through instant location alerts when scanned.
+                </p>
+              </div>
+              <div className="benefit-card">
+                <div className="benefit-icon">🚀</div>
+                <h4>Proactive Loss Prevention</h4>
+                <p>
+                  Unlike passive tracking solutions, Trackr actively prevents
+                  loss through smart geofencing that alerts you when items are
+                  left behind, habit-building reminders, and predictive
+                  notifications based on your routines and check-in-and-out
+                  patterns.
+                </p>
+              </div>
+              <div className="benefit-card">
+                <div className="benefit-icon">🎯</div>
+                <h4>Complete Item Protection System</h4>
+                <p>
+                  Trackr uniquely combines both recovery and prevention in one
+                  platform, integrating community-powered location alerts with
+                  personalized habit coaching—features that traditional DIY tags
+                  and lost-and-found systems simply don't offer together.
+                </p>
               </div>
             </div>
           </div>
@@ -125,11 +225,8 @@ export default function Home() {
               required.
             </p>
 
-            <a
-              href="https://kuuktc-bs.myshopify.com/"
-              className="homepage-btn-primary"
-            >
-              Shop Trackr Products
+            <a href="" className="homepage-btn-primary">
+              Store In Progress
             </a>
           </div>
           <div className="shop-image">

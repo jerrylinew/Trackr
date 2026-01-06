@@ -560,9 +560,98 @@
   align-items: center;
 }
 
+/* Story Section */
+.story-section {
+  background-color: white;
+  padding: 6rem 0;
+}
+
+.story-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-badge {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.story-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.story-description {
+  color: #666 !important;
+  font-style: italic;
+}
+
+.story-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 1rem;
+  background-color: white;
+  width: 100%;
+  margin: 0;
+}
+
 /* How It Works Section */
 .how-it-works-section {
-  background-color: white;
+  background-color: #f8f9fa;
   padding: 6rem 0;
 }
 
@@ -672,9 +761,61 @@
   display: none;
 }
 
+/* Model Benefits */
+.model-benefits {
+  margin-top: 4rem;
+}
+
+.benefits-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.benefit-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Shop Section */
 .shop-section {
-  background-color: #f8f9fa;
+  background-color: white;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -835,31 +976,49 @@
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none !important;
   font-family: inherit;
   border: 2px solid black;
+  display: inline-block;
 }
 
 .homepage-btn-primary {
   background-color: black;
-  color: white;
+  color: white !important;
   border-left: 7px solid black;
   border-right: 7px solid black;
 }
 
 .homepage-btn-primary:hover {
   background-color: #333;
+  color: white !important;
 }
 
 .homepage-btn-secondary {
   background-color: transparent;
-  color: black;
+  color: black !important;
 }
 
 .homepage-btn-secondary:hover {
   background-color: black;
-  color: white;
+  color: white !important;
+}
+
+/* Additional link reset for buttons */
+a.homepage-btn-primary,
+a.homepage-btn-secondary {
+  text-decoration: none !important;
+}
+
+a.homepage-btn-primary:visited,
+a.homepage-btn-secondary:visited {
+  color: inherit;
+}
+
+a.homepage-btn-primary:link,
+a.homepage-btn-secondary:link {
+  color: inherit;
 }
 
 /* Responsive Design - Setup Page */
@@ -994,6 +1153,29 @@
     max-width: 300px;
   }
 
+  /* Story Section - Mobile */
+  .story-section {
+    padding: 4rem 0;
+  }
+
+  .story-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .story-title {
+    font-size: 2.5rem;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+  }
+
+  .story-image {
+    min-height: 300px;
+  }
+
   /* How It Works Section - Mobile */
   .how-it-works-section {
     padding: 4rem 0;
@@ -1011,90 +1193,5 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
     max-width: 100%;
-  }
-
-  .step-card {
-    min-height: auto;
-  }
-
-  .step-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .step-title {
-    font-size: 1.4rem;
-  }
-
-  .step-description {
-    font-size: 1rem;
-    max-width: none;
-  }
-
-  .step-image-placeholder {
-    min-height: 200px;
-  }
-
-  /* Shop Section - Mobile */
-  .shop-section {
-    padding: 4rem 0;
-    min-height: auto;
-  }
-
-  .shop-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 0 1.5rem;
-  }
-
-  .shop-content {
-    max-width: none;
-    order: 1;
-    text-align: center;
-    align-items: center;
-  }
-
-  .shop-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .shop-content p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    max-width: none;
-  }
-
-  .shop-content .homepage-btn-primary {
-    align-self: center;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .shop-image {
-    height: 300px;
-    order: 2;
-  }
-
-  /* Contact Section - Mobile */
-  .contact-section {
-    min-height: auto;
-    padding: 4rem 0;
-  }
-
-  .contact-container {
-    padding: 2rem 1.5rem;
-  }
-
-  .contact-grid {
-    gap: 2rem;
-  }
-
-  /* Navigation - Mobile */
-  .homepage-nav-links {
-    display: none;
-  }
-
-  .homepage-nav-container {
-    padding: 0 1.5rem;
   }
 }
