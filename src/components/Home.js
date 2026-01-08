@@ -41,9 +41,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="hero-section" id="heroSection">
         <div className="homepage-hero-container">
-          <h1 className="hero-title">Welcome to Trackr</h1>
-          <p className="hero-subtitle">
-            "Find your lost items with a sticker and a scan"
+          <div className="hero-logo-title">
+            <img src="/trackrLogo.png" width="60" alt="Trackr Logo" />
+            <h1 className="hero-title-medium">Trackr</h1>
+          </div>
+          <p className="hero-subtitle-large">
+            Find your lost items with a sticker and a scan
           </p>
           <div className="homepage-hero-buttons">
             <a href="#shopSection" className="homepage-btn-primary">
