@@ -524,12 +524,26 @@
 
 /* Homepage Hero Section */
 .hero-section {
-  background-color: #f8f9fa;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding-top: 8rem;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .homepage-hero-container {
@@ -537,20 +551,34 @@
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-title {
-  font-size: 4rem;
+.hero-logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-title-medium {
+  font-size: 3rem;
   font-weight: bold;
-  color: black;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  color: white;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero-subtitle {
-  font-size: 1.5rem;
-  color: #666;
+.hero-subtitle-large {
+  font-size: 3rem;
+  color: white;
   margin-bottom: 3rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .homepage-hero-buttons {
@@ -599,13 +627,6 @@
   margin: 0 auto;
 }
 
-.step1,
-.step2,
-.step3 {
-  font-size: 20px;
-  color: black;
-}
-
 .step-card {
   background-color: white;
   border-radius: 20px;
@@ -616,7 +637,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 550px;
+  justify-content: flex-start; /* align content from top */
+  min-height: auto;
   overflow: hidden;
 }
 
@@ -626,27 +648,30 @@
 }
 
 .step-content {
-  flex: 1;
+  /* take available height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* vertically center text inside card */
   padding: 2.5rem;
+  text-align: center;
+  flex: none; /* optional, centers title and description */
 }
 
 .step-image-placeholder {
-  flex: 1;
+  flex: 0 0 auto;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   color: #666;
-  min-height: 280px;
+  min-height: auto;
+  height: 750px;
 }
 
 .step-image-placeholder img {
   width: 100%;
-  height: 100%;
+  height: 750px;
   object-fit: contain;
   display: block;
 }
@@ -657,13 +682,14 @@
   color: black;
   margin-bottom: 1.5rem;
   line-height: 1.3;
+  margin-top: 0;
 }
 
 .step-description {
   font-size: 1.1rem;
   color: #666;
   line-height: 1.7;
-  margin: 0;
+
   max-width: 280px;
   margin: 0 auto;
 }
@@ -747,7 +773,7 @@
   display: block;
 }
 
-/* Contact Section */
+/* Contact Section Alignment & Sizing */
 .contact-section {
   background-color: black;
   border-top: 1px solid #333;
@@ -755,76 +781,66 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 4rem 2rem;
+  flex-direction: column;
 }
 
 .contact-container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
   width: 100%;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
-  margin-bottom: 3rem;
+  justify-content: center; /* center columns */
+  text-align: center; /* center all text */
 }
 
-.contact-section-item h3 {
-  color: white;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  font-size: 2rem;
+.contact-section-item {
+  flex: 1 1 250px;
+  text-align: left;
 }
 
+.contact-section-item h3,
 .contact-section-item h4 {
   color: white;
-  margin-bottom: 1.5rem;
+  font-size: 1.8rem; /* same size for all headings */
   font-weight: 600;
-  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.contact-section-item p {
+.contact-section-item p,
+.contact-section-item ul li,
+.contact-section-item a {
+  font-size: 1.2rem; /* same size for all content */
   color: white;
   line-height: 1.6;
-  margin: 0;
-  font-size: 1.1rem;
+  text-decoration: none;
+  margin: 0.3rem 0;
 }
 
 .contact-section-item ul {
+  color: white;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.contact-section-item ul li {
-  margin-bottom: 0.75rem;
-  color: white;
-  font-size: 1.1rem;
-}
-
-.contact-section-item ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
 .contact-section-item ul li a:hover {
   color: #ccc;
+  text-decoration: underline;
 }
 
 .contact-bottom {
+  color: white;
   text-align: center;
   padding-top: 2rem;
   border-top: 1px solid #333;
+  font-size: 1.2rem; /* same size */
 }
 
-.contact-bottom p {
-  color: white;
-  margin: 0;
-  font-size: 1rem;
-}
 
 /* Button Styles */
 .homepage-btn-primary,
@@ -853,13 +869,14 @@
 }
 
 .homepage-btn-secondary {
-  background-color: transparent;
+  background-color: white;
   color: black;
+  border: 2px solid rgba(0, 0, 0, 1);
 }
 
 .homepage-btn-secondary:hover {
-  background-color: black;
-  color: white;
+  background-color: #f5f5f5;
+  border-color: black;
 }
 
 /* Responsive Design - Setup Page */
@@ -973,12 +990,21 @@
     padding: 0 1.5rem;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-logo-title img {
+    width: 40px;
+
+    background-color: white;
+    padding: 3px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
 
-  .hero-subtitle {
-    font-size: 1.2rem;
+  .hero-title-medium {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle-large {
+    font-size: 1.8rem;
     margin-bottom: 2rem;
   }
 
@@ -1008,17 +1034,24 @@
   }
 
   .homepage-services-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 
   .step-card {
-    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px; /* all cards same height */
   }
 
   .step-content {
-    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* align text from top */
+    padding: 2.5rem;
+    height: 100%; /* full height of the card */
+    box-sizing: border-box;
   }
 
   .step-title {
@@ -1096,5 +1129,91 @@
 
   .homepage-nav-container {
     padding: 0 1.5rem;
+  }
+}
+/* Mission, Vision & Values Section */
+.mission-values-section {
+  background-color: #f8f9fa;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.mv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.mv-text {
+  flex: 1 1 500px;
+}
+
+.mv-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.mv-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.mv-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.mv-content ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.mv-image {
+  flex: 1 1 400px;
+  text-align: center;
+  top: 50%; /* position middle vertically */
+  transform: translateY(30%); /* center it perfectly */
+}
+
+.mv-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mv-image-caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mv-container {
+    flex-direction: column;
+  }
+
+  .mv-text,
+  .mv-image {
+    flex: 1 1 100%;
+  }
+
+  .mv-title {
+    font-size: 2rem;
+  }
+
+  .mv-content p,
+  .mv-content ul li {
+    font-size: 1rem;
   }
 }

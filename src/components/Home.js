@@ -39,11 +39,18 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero-section" id="heroSection">
+      <section
+        className="hero-section"
+        id="heroSection"
+        style={{ backgroundImage: "url(/cinema.png)" }}
+      >
         <div className="homepage-hero-container">
-          <h1 className="hero-title">Welcome to Trackr</h1>
-          <p className="hero-subtitle">
-            "Find your lost items with a sticker and a scan"
+          <div className="hero-logo-title">
+            <img src="/trackrLogo.png" width="60" alt="Trackr Logo" />
+            <h1 className="hero-title-medium">Trackr</h1>
+          </div>
+          <p className="hero-subtitle-large">
+            Find your lost items with a sticker and a scan
           </p>
           <div className="homepage-hero-buttons">
             <a href="#shopSection" className="homepage-btn-primary">
@@ -68,7 +75,6 @@ export default function Home() {
             {/* Step 1 - Image at bottom */}
             <div className="step-card">
               <div className="step-content">
-                <h4 className="step1">1.</h4>
                 <h3 className="step-title">Activate Your Trackr</h3>
                 <p className="step-description">
                   First scan activates your Trackr. Just fill in your info and
@@ -83,7 +89,6 @@ export default function Home() {
             {/* Step 2 - Image at top (using reverse class) */}
             <div className="step-card">
               <div className="step-content">
-                <h4 className="step2">2.</h4>
                 <h3 className="step-title">Place Your Trackr</h3>
                 <p className="step-description">
                   Stick your Trackr on keys, bags, electronics—anything you
@@ -98,7 +103,6 @@ export default function Home() {
             {/* Step 3 - Image at bottom */}
             <div className="step-card">
               <div className="step-content">
-                <h4 className="step3">3.</h4>
                 <h3 className="step-title">Get Your Item Back</h3>
                 <p className="step-description">
                   When someone finds your item and scans the code, we'll notify
@@ -106,13 +110,65 @@ export default function Home() {
                 </p>
               </div>
               <div className="step-image-placeholder">
-                <img src="/emailtrackr.png" />
+                <img src="/locationpage.png" />
               </div>
             </div>
           </div>
         </div>
       </section>
+      {/* Mission, Vision & Values Section */}
+      <section className="mission-values-section">
+        <div className="mv-container">
+          <div className="mv-text">
+            <h2 className="mv-title">Mission, Vision & Values</h2>
 
+            <div className="mv-content">
+              <p>
+                We aim to eliminate the waste and environmental impact of lost
+                everyday items by providing an affordable, accessible tracking
+                solution that helps students and young adults recover their
+                belongings and build better habits to prevent future losses.
+              </p>
+              <p>
+                Our vision is a world where losing everyday items no longer
+                means unnecessary waste, where every water bottle, jacket, and
+                lunch box can find its way home, preventing millions of tons of
+                CO2 emissions and landfill waste annually.
+              </p>
+              <p>
+                <strong>Values:</strong>
+              </p>
+              <ul>
+                <li>
+                  <strong>Sustainability First</strong> – Keep items in use, not
+                  landfills.
+                </li>
+                <li>
+                  <strong>Affordable for Everyone</strong> – Quality tracking
+                  shouldn't break the bank.
+                </li>
+                <li>
+                  <strong>Community Matters</strong> – We're stronger when we
+                  help each other out.
+                </li>
+                <li>
+                  <strong>Keep It Simple</strong> – Powerful tech that anyone
+                  can use.
+                </li>
+                <li>
+                  <strong>Prevention Over Cure</strong> – Stop losses before
+                  they happen.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mv-image">
+            <img src="/teamphoto.jpg" alt="Team or mission imagery" />
+            <p className="mv-image-caption">Amy, Marqus, Alex, Ethan</p>
+          </div>
+        </div>
+      </section>
       {/* Shop Section */}
       <section className="shop-section" id="shopSection">
         <div className="shop-container">
@@ -125,15 +181,12 @@ export default function Home() {
               required.
             </p>
 
-            <a
-              href="https://kuuktc-bs.myshopify.com/"
-              className="homepage-btn-primary"
-            >
-              Shop Trackr Products
+            <a href="" className="homepage-btn-primary">
+              Store In Progress
             </a>
           </div>
           <div className="shop-image">
-            <img src="/trackrphone.png" />
+            <img src="/phonehead.png" />
           </div>
         </div>
       </section>
@@ -144,29 +197,28 @@ export default function Home() {
           <div className="contact-grid">
             <div className="contact-section-item">
               <h3>Trackr</h3>
-              <p>Trackr description</p>
+              <p>
+                Trackr creates smart lost-and-found stickers that help people
+                quickly recover misplaced items, from water bottles to wallets.
+                Out easy-to-use, affordable stickers make everyday life a little
+                less stressful by turning lost things into found things.
+              </p>
             </div>
 
             <div className="contact-section-item">
               <h4>Company</h4>
               <ul>
                 <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">Privacy</a>
+                  <a href="#instructionsSection">About</a>
                 </li>
               </ul>
             </div>
             <div className="contact-section-item">
               <h4>Contact</h4>
               <ul>
-                <li>work.fred.zhang@gmail.com</li>
-                <li>(512) - 774 - 2988</li>
-                <li>123 Trackr St.</li>
+                <li>ethanjoshuasema@gmail.com</li>
+                <li>(267) - 648 - 3654</li>
+                <li>301 Bishop Drive, San Ramon, California</li>
               </ul>
             </div>
           </div>
