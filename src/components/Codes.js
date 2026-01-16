@@ -34,7 +34,7 @@ export default function Codes() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "1rem",
+          gap: "0",
           marginTop: "2rem",
         }}
       >
@@ -45,6 +45,8 @@ export default function Codes() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              padding: "1rem",
+              border: "1px dashed #999",
             }}
           >
             {/* Text at the top */}
