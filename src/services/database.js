@@ -140,3 +140,15 @@ export async function GmailID(leGmail){
   console.log("/items?email=" + snap.docs[0].id)
   }
 }
+
+export async function IDGmail(leId){
+  console.log(leId);
+  const q = query(collection(db, "users"), where("email", "!=", leId));
+  const snap = await getDocs(q);
+  console.log(snap.docs.length);
+  if(snap.docs.length > 0){
+  const codeRef = snap.docs[0].id;
+  console.log("/items?email=" + snap.docs[0].id)
+  }
+
+}
