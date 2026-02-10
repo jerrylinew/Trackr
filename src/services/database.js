@@ -131,3 +131,12 @@ export async function appendimageData(imageD, leID) {
   console.log("yay");
   return true;
 }
+
+export async function GmailID(leGmail){
+  const q = query(collection(db, "users"), where("email", "==", leGmail.toLowerCase()));
+  const snap = await getDocs(q);
+  if(snap.docs.length > 0){
+  const codeRef = snap.docs[0].ref;
+  console.log("/items?email=" + snap.docs[0].id)
+  }
+}
