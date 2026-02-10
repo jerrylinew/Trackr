@@ -4,6 +4,7 @@ import Scan from "./components/Scan";
 import Location from "./components/Location";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
+import Email from "./components/Email";
 export default function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/:code" element={<Scan />} />
         <Route path="/:code/location" element={<Location />} />
+        <Route path="/email" element={<Email />} />
       </Routes>
     </Router>
   );
