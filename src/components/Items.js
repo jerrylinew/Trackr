@@ -4,7 +4,7 @@ export default function Items() {
   const [searchParams, setSearchParams] = useSearchParams();
   const q = searchParams.get('q');
   const sort = searchParams.get('sort') ?? 'relevance';
-  const email = searchParams.get('email');
+  const email = searchParams.get('id');
 
   // Update parameters
   function updateSort(sortValue) {

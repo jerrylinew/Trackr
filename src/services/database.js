@@ -2,6 +2,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  getDoc,
   query,
   where,
   orderBy,
@@ -137,18 +138,17 @@ export async function GmailID(leGmail){
   const snap = await getDocs(q);
   if(snap.docs.length > 0){
   const codeRef = snap.docs[0].ref;
-  console.log("/items?email=" + snap.docs[0].id)
+  console.log("/items?id=" + snap.docs[0].id)
   }
 }
 
 export async function IDGmail(leId){
   console.log(leId);
-  const q = query(collection(db, "users"), where("email", "!=", leId));
-  const snap = await getDocs(q);
-  console.log(snap.docs.length);
-  if(snap.docs.length > 0){
-  const codeRef = snap.docs[0].id;
-  console.log("/items?email=" + snap.docs[0].id)
+  const q = doc(db, "users", leId);
+  const snap = await getDoc(q);
+  if(snap.exists()){
+  const codeRef = snap.data();
+  console.log(snap.data().email)
   }
 
 }

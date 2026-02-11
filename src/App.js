@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/:code" element={<Scan />} />
         <Route path="/:code/location" element={<Location />} />
         <Route path="/email" element={<Email />} />
-        <Route path="items" element={<Items />} />
+        <Route path="/items" element={<Items />} />
       </Routes>
     </Router>
   );
