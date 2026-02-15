@@ -147,8 +147,20 @@ export async function IDGmail(leId){
   const q = doc(db, "users", leId);
   const snap = await getDoc(q);
   if(snap.exists()){
-  const codeRef = snap.data();
-  console.log(snap.data().email)
+    const codeRef = snap.data();
+    //console.log(snap.data().email)
+    const q2 = query(collection(db, "items"), where("email", "==", snap.data().email));
+    const snap2 = await getDocs(q2);
+    var c = [snap.data().email];
+
+    for(var I = 0; I < snap2.docs.length; I++){
+      //console.log(snap2.docs[I].data().name)
+      c.push([snap2.docs[I].data().name, snap2.docs[I].data().objname, snap2.docs[I].data().message]);
+    }
+
+    return c;
+  } else {
+    return false;
   }
 
 }
